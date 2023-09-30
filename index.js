@@ -7,7 +7,7 @@ const symbols = {
 function isLastChild(node, parent) {
     return parent.items[parent.items.length - 1] === node;
 }
-function getTree(obj) {
+function treeifyData(obj) {
     function traversal(node, parent, root, result = [], startPath = []) {
         if(parent === node) {
             result.push(node.name);
@@ -40,4 +40,4 @@ function getTree(obj) {
     }
     return traversal(obj, obj, obj).join('\n');
 }
-export default getTree;
+export default treeifyData;

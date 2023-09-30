@@ -8,7 +8,6 @@
     "url": "https://github.com/AlexGreb/treeify-data"
   },
   "scripts": {
-    "start": "node ./index.js"
   },
   "keywords": [
     "object",
