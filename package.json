@@ -1,0 +1,35 @@
+{
+  "name": "treeify-data",
+  "version": "1.0.0",
+  "description": "Stringify data tree as visual tree structure in console",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexGreb/treeify-data"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "keywords": [
+    "object",
+    "tree",
+    "print",
+    "console",
+    "pretty",
+    "treeify",
+    "stringify",
+    "visualize",
+    "convert",
+    "string",
+    "debug"
+  ],
+  "homepage": "https://github.com/AlexGreb/treeify-data#readme",
+  "author": "AlexGreb",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/AlexGreb/treeify-data/blob/main/LICENSE"
+    }
+  ],
+  "license": "MIT"
+}
