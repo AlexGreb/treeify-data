@@ -1,5 +1,6 @@
 {
   "name": "treeify-data",
+  "type": "module",
   "version": "1.0.0",
   "description": "Stringify data tree as visual tree structure in console",
   "main": "index.js",
