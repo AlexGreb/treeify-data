@@ -20,3 +20,18 @@ console.log(
             }]
 });
 ```
+---
+
+### :fire: My Stats :
+
+[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=AlexGreb&theme=dark&hide_border=true)](https://git.io/streak-stats)
+
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=AlexGreb&layout=compact&theme=vision-friendly-dark)](https://github.com/anuraghazra/github-readme-stats)
+
+<div align="center">
+  <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
+</div>
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=AlexGreb&style=flat-square&color=blue" alt=""/>  
+</div>
