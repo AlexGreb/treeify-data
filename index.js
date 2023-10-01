@@ -4,40 +4,41 @@ const symbols = {
     keyNoNeighbour: '└─ ',
     keyNeighbour: '├─ ',
 };
-function isLastChild(node, parent) {
-    return parent.items[parent.items.length - 1] === node;
+function isLastChild(node, parent, childrenProp) {
+    return parent[childrenProp][parent[childrenProp].length - 1] === node;
 }
-function treeifyData(obj) {
-    function traversal(node, parent, root, result = [], startPath = []) {
+function treeifyData(obj, prop = 'name', childrenProp = 'items') {
+    function traversal(node, parent, root, result = [], startPath = '') {
+        if(!node.hasOwnProperty(prop)) return;
         if(parent === node) {
-            result.push(node.name);
+            result.push(node[prop]);
         } else {
             //result
-            if(!isLastChild(node, parent)) {
-                result.push(startPath.join('') + symbols.keyNeighbour + node.name);
+            if(!isLastChild(node, parent, childrenProp)) {
+                result.push(startPath + symbols.keyNeighbour + node[prop]);
             } else {
-                result.push(startPath.join('') + symbols.keyNoNeighbour + node.name);
+                result.push(startPath + symbols.keyNoNeighbour + node[prop]);
             }
             //
 
             //next
-            if(node.items != null && node.items.length) {
-                if(isLastChild(node, parent)) {
-                    startPath.push(symbols.spacerNoNeighbour);
+            if(node.hasOwnProperty(childrenProp) && node[childrenProp].length) {
+                if(isLastChild(node, parent, childrenProp)) {
+                    startPath += symbols.spacerNoNeighbour;
                 } else {
-                    startPath.push(symbols.spacerNeighbour);
+                    startPath += symbols.spacerNeighbour;
                 }
             }
         }
-        if(node.items != null && node.items.length) {
-            const stack = [...node.items];
+        if(node.hasOwnProperty(childrenProp) && node[childrenProp].length) {
+            const stack = [...node[childrenProp]];
             while (stack.length) {
                 const currentNode = stack.shift();
-                traversal(currentNode, node, root, result, [...startPath]);
+                traversal(currentNode, node, root, result, startPath);
             }
         }
         return result;
     }
-    return traversal(obj, obj, obj).join('\n');
+    return traversal(obj, obj, obj)?.join('\n');
 }
 export default treeifyData;
