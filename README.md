@@ -20,3 +20,25 @@ console.log(
             }]
 });
 ```
+
+Prop	Description	Default	Type
+
+| Prop          | Description                                   | Default  | Type
+| ------------- |:---------------------------------------------:| :-------:| ------:|
+| prop          | Used to indicate data output                  | name     | string |
+| childrenProp  | Used to specify properties of child elements  | items    | string |
+
+Example:
+
+```javascript
+import treeifyData from "treeify-data";
+console.log(
+  treeifyData({
+    parent: 1,                          // 1
+    childs: [{ parent: 2,                // └─  2
+               childs: [ { parent: 3 }, //    ├─ 3
+                       { parent: 4 }] //    └─ 4
+            }]
+}, 'parent', 'childs');
+```
+
