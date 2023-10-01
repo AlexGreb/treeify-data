@@ -21,8 +21,6 @@ console.log(
 });
 ```
 
-Prop	Description	Default	Type
-
 | Prop          | Description                                   | Default  | Type
 | ------------- |:---------------------------------------------:| :-------:| ------:|
 | prop          | Used to indicate data output                  | name     | string |
