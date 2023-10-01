@@ -1,7 +1,7 @@
 # treeify-data
 <em>treeify-data</em> converts a JS object into a nice, visible depth-indented tree for console printing. The structure generated is similar to what you get by running the tree command on Unixy platforms.
 
-## For use with node.js
+## Usage
 First you'll want to run this command in your project's root folder:
 ```
 $ npm install treeify-data
