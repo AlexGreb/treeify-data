@@ -32,10 +32,10 @@ Example:
 import treeifyData from "treeify-data";
 console.log(
   treeifyData({
-    parent: 1,                          // 1
+    parent: 1,                           // 1
     childs: [{ parent: 2,                // └─  2
-               childs: [ { parent: 3 }, //    ├─ 3
-                       { parent: 4 }] //    └─ 4
+               childs: [ { parent: 3 },  //    ├─ 3
+                       { parent: 4 }]    //    └─ 4
             }]
 }, 'parent', 'childs');
 ```
