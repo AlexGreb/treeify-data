@@ -7,7 +7,7 @@ const symbols = {
 function isLastChild(node, parent, childrenProp) {
     return parent[childrenProp][parent[childrenProp].length - 1] === node;
 }
-function treeifyData(obj,  prop = 'name', childrenProp = 'items', depth) {
+function treeifyData(obj,  prop = 'name', childrenProp = 'items', depth = Infinity) {
     function traversal(node, parent, root, result = [], startPath = '', curDepth = 1) {
         if(!node.hasOwnProperty(prop)) return;
         if(parent === node) {
@@ -31,7 +31,7 @@ function treeifyData(obj,  prop = 'name', childrenProp = 'items', depth) {
             const stack = [...node[childrenProp]];
             while (stack.length) {
                 const currentNode = stack.shift();
-                if(!(curDepth >= depth)) {
+                if(curDepth < depth) {
                     traversal(currentNode, node, root, result, startPath, curDepth+1);
                 }
             }
