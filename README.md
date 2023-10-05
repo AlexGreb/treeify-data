@@ -18,13 +18,14 @@ console.log(
                 items: [ { name: 3 }, //    ├─ 3
                          { name: 4 }] //    └─ 4
             }]
-});
+}));
 ```
 
-| Prop          | Description                                   | Default  | Type
-| ------------- |:---------------------------------------------:| :-------:| ------:|
-| prop          | Used to indicate data output                  | name     | string |
-| childrenProp  | Used to specify properties of child elements  | items    | string |
+| Prop         |                 Description                  | Default |   Type |
+|--------------|:--------------------------------------------:|:-------:|-------:|
+| prop         |         Used to indicate data output         |  name   | string |
+| childrenProp | Used to specify properties of child elements |  items  | string |
+| depth        |                  Show depth                  |   N/A   | number |
 
 Example:
 
@@ -37,6 +38,6 @@ console.log(
                childs: [ { parent: 3 },  //    ├─ 3
                        { parent: 4 }]    //    └─ 4
             }]
-}, 'parent', 'childs');
+}, 'parent', 'childs'));
 ```
 
