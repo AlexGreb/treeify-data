@@ -9,7 +9,6 @@ function isLastChild(node, parent, childrenProp) {
 }
 function treeifyData(obj,  prop = 'name', childrenProp = 'items', depth) {
     function traversal(node, parent, root, result = [], startPath = '', curDepth = 1) {
-        console.log(node.name, depth);
         if(!node.hasOwnProperty(prop)) return;
         if(parent === node) {
             result.push(node[prop]);
