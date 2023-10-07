@@ -22,9 +22,9 @@ function treeifyData(obj,  prop = 'name', childrenProp = 'items', depth = Infini
             }
         }
         if(node.hasOwnProperty(childrenProp) && node[childrenProp].length) {
-            const stack = [...node[childrenProp]];
-            while (stack.length) {
-                const currentNode = stack.shift();
+            const queue = [...node[childrenProp]];
+            while (queue.length) {
+                const currentNode = queue.shift();
                 if(curDepth < depth) {
                     traversal(currentNode, node, result, startPath, curDepth+1);
                 }
