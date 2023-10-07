@@ -21,11 +21,11 @@ console.log(
 }));
 ```
 
-| Prop         |                 Description                  | Default |   Type |
-|--------------|:--------------------------------------------:|:-------:|-------:|
-| prop         |         Used to indicate data output         |  name   | string |
-| childrenProp | Used to specify properties of child elements |  items  | string |
-| depth        |                  Show depth                  |   N/A   | number |
+| Prop         |                 Description                  | Default  |   Type |
+|--------------|:--------------------------------------------:|:--------:|-------:|
+| prop         |         Used to indicate data output         |   name   | string |
+| childrenProp | Used to specify properties of child elements |  items   | string |
+| depth        |                  Show depth                  | Infinity | number |
 
 Example:
 
