@@ -13,18 +13,12 @@ function treeifyData(obj,  prop = 'name', childrenProp = 'items', depth = Infini
         if(parent === node) {
             result.push(node[prop]);
         } else {
-            if(!isLastChild(node, parent, childrenProp)) {
-                result.push(startPath + symbols.keyNeighbour + node[prop]);
-            } else {
-                result.push(startPath + symbols.keyNoNeighbour + node[prop]);
-            }
-
+            const isLast = isLastChild(node, parent, childrenProp);
+            result.push(
+                startPath + (isLast ? symbols.keyNoNeighbour : symbols.keyNeighbour ) + node[prop]
+            )
             if(node.hasOwnProperty(childrenProp) && node[childrenProp].length) {
-                if(isLastChild(node, parent, childrenProp)) {
-                    startPath += symbols.spacerNoNeighbour;
-                } else {
-                    startPath += symbols.spacerNeighbour;
-                }
+                startPath += isLast ? symbols.spacerNoNeighbour : symbols.spacerNeighbour;
             }
         }
         if(node.hasOwnProperty(childrenProp) && node[childrenProp].length) {
